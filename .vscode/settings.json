@@ -1,0 +1,3 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/src/ai-care-coordintor/.venv/Scripts/python.exe"
+}
