@@ -30,31 +30,55 @@ Tasks are defined in `src/ai_care_coordintor/config/tasks.yaml`:
 ## Installation
 
 1. Clone the repository:
-   ```sh
-   git clone <repo-url>
-   cd multi-agent-ai-care-coordintor
-   ```
-2. Install dependencies (Python 3.10–3.13 required):
-   ```sh
-   pip install .
-   ```
+
+```sh
+git clone <repo-url>
+cd multi-agent-ai-care-coordintor
+cd src
+```
+
+src\.venv\Scripts\activate 2. **(Recommended)** Create and activate a virtual environment (.venv):
+
+```sh
+# On Windows (from src directory)
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+# On macOS/Linux (from src directory)
+
+```sh
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+3. Install dependencies (Python 3.10–3.13 required):
+
+> **Important:** Run this command from the `src` directory (where `pyproject.toml` is now located):
+
+```sh
+pip install -e .
+```
+
+This will install the package in editable mode and make the `ai_care_coordintor` module and scripts available system-wide.
 
 ## Usage
 
-You can run the main entry points as defined in `pyproject.toml`:
+After installation, you can run the application using the installed scripts from anywhere (ensure your virtual environment is activated):
 
-- Run the main system:
-  ```sh
-  python -m ai_care_coordintor.main
-  ```
-- Or use the provided scripts:
-  ```sh
-  ai-care-coordintor
-  run_crew
-  train
-  replay
-  test
-  ```
+```sh
+ai_care_coordintor   # Main entry point
+run_crew             # Alias for main entry point
+train                # For training mode (if implemented)
+replay               # For replay mode (if implemented)
+test                 # For test mode (if implemented)
+```
+
+> **Note:**
+>
+> - The main entry point is `run()` in `ai_care_coordintor/main.py`.
+> - Ensure your terminal's working directory is the `src` folder when installing.
+> - You can modify or extend the input data in `main.py` as needed for your use case.
 
 ## Project Structure
 
@@ -71,3 +95,4 @@ You can run the main entry points as defined in `pyproject.toml`:
 ## License
 
 This project is licensed under the terms of the LICENSE file in this repository.
+python -m src.ai_care_coordintor.main
